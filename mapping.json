@@ -1,0 +1,783 @@
+{
+    "template": "brologs*",
+    "mappings": {
+        "capture_loss": {
+            "properties": {
+                "ts_delta": {
+                    "type": "double"
+                },
+                "peer": {
+                    "type": "keyword"
+                },
+                "gaps": {
+                    "type": "long"
+                },
+                "acks": {
+                    "type": "long"
+                },
+                "percent_lost": {
+                    "type": "double"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "communication": {
+            "properties": {
+                "peer": {
+                    "type": "keyword"
+                },
+                "src_name": {
+                    "type": "keyword"
+                },
+                "connected_peer_desc": {
+                    "type": "keyword"
+                },
+                "connected_peer_addr": {
+                    "type": "ip"
+                },
+                "connected_peer_port": {
+                    "type": "keyword"
+                },
+                "level": {
+                    "type": "keyword"
+                },
+                "message": {
+                    "type": "keyword"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "conn": {
+            "properties": {
+                "uid": {
+                    "type": "keyword"
+                },
+                "id": {
+                    "properties": {
+                        "orig_h": {
+                            "type": "ip"
+                        },
+                        "orig_p": {
+                            "type": "keyword"
+                        },
+                        "resp_h": {
+                            "type": "ip"
+                        },
+                        "resp_p": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "proto": {
+                    "type": "keyword"
+                },
+                "service": {
+                    "type": "keyword"
+                },
+                "duration": {
+                    "type": "double"
+                },
+                "orig_bytes": {
+                    "type": "long"
+                },
+                "resp_bytes": {
+                    "type": "long"
+                },
+                "conn_state": {
+                    "type": "keyword"
+                },
+                "local_orig": {
+                    "type": "boolean"
+                },
+                "local_resp": {
+                    "type": "boolean"
+                },
+                "missed_bytes": {
+                    "type": "long"
+                },
+                "history": {
+                    "type": "keyword"
+                },
+                "orig_pkts": {
+                    "type": "long"
+                },
+                "orig_ip_bytes": {
+                    "type": "long"
+                },
+                "resp_pkts": {
+                    "type": "long"
+                },
+                "resp_ip_bytes": {
+                    "type": "long"
+                },
+                "tunnel_parents": {
+                    "type": "keyword"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "dns": {
+            "properties": {
+                "uid": {
+                    "type": "keyword"
+                },
+                "id": {
+                    "properties": {
+                        "orig_h": {
+                            "type": "ip"
+                        },
+                        "orig_p": {
+                            "type": "keyword"
+                        },
+                        "resp_h": {
+                            "type": "ip"
+                        },
+                        "resp_p": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "proto": {
+                    "type": "keyword"
+                },
+                "trans_id": {
+                    "type": "long"
+                },
+                "rtt": {
+                    "type": "double"
+                },
+                "query": {
+                    "type": "keyword"
+                },
+                "qclass": {
+                    "type": "long"
+                },
+                "qclass_name": {
+                    "type": "keyword"
+                },
+                "qtype": {
+                    "type": "long"
+                },
+                "qtype_name": {
+                    "type": "keyword"
+                },
+                "rcode": {
+                    "type": "long"
+                },
+                "rcode_name": {
+                    "type": "keyword"
+                },
+                "AA": {
+                    "type": "boolean"
+                },
+                "TC": {
+                    "type": "boolean"
+                },
+                "RD": {
+                    "type": "boolean"
+                },
+                "RA": {
+                    "type": "boolean"
+                },
+                "Z": {
+                    "type": "long"
+                },
+                "answers": {
+                    "type": "keyword"
+                },
+                "TTLs": {
+                    "type": "double"
+                },
+                "rejected": {
+                    "type": "boolean"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "dpd": {
+            "properties": {
+                "uid": {
+                    "type": "keyword"
+                },
+                "id": {
+                    "properties": {
+                        "orig_h": {
+                            "type": "ip"
+                        },
+                        "orig_p": {
+                            "type": "keyword"
+                        },
+                        "resp_h": {
+                            "type": "ip"
+                        },
+                        "resp_p": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "proto": {
+                    "type": "keyword"
+                },
+                "analyzer": {
+                    "type": "keyword"
+                },
+                "failure_reason": {
+                    "type": "keyword"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "files": {
+            "properties": {
+                "fuid": {
+                    "type": "keyword"
+                },
+                "tx_hosts": {
+                    "type": "ip"
+                },
+                "rx_hosts": {
+                    "type": "ip"
+                },
+                "conn_uids": {
+                    "type": "keyword"
+                },
+                "source": {
+                    "type": "keyword"
+                },
+                "depth": {
+                    "type": "long"
+                },
+                "analyzers": {
+                    "type": "keyword"
+                },
+                "mime_type": {
+                    "type": "keyword"
+                },
+                "filename": {
+                    "type": "keyword"
+                },
+                "duration": {
+                    "type": "double"
+                },
+                "local_orig": {
+                    "type": "boolean"
+                },
+                "is_orig": {
+                    "type": "boolean"
+                },
+                "seen_bytes": {
+                    "type": "long"
+                },
+                "total_bytes": {
+                    "type": "long"
+                },
+                "missing_bytes": {
+                    "type": "long"
+                },
+                "overflow_bytes": {
+                    "type": "long"
+                },
+                "timedout": {
+                    "type": "boolean"
+                },
+                "parent_fuid": {
+                    "type": "keyword"
+                },
+                "md5": {
+                    "type": "keyword"
+                },
+                "sha1": {
+                    "type": "keyword"
+                },
+                "sha256": {
+                    "type": "keyword"
+                },
+                "extracted": {
+                    "type": "keyword"
+                },
+                "extracted_cutoff": {
+                    "type": "boolean"
+                },
+                "extracted_size": {
+                    "type": "long"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "http": {
+            "properties": {
+                "uid": {
+                    "type": "keyword"
+                },
+                "id": {
+                    "properties": {
+                        "orig_h": {
+                            "type": "ip"
+                        },
+                        "orig_p": {
+                            "type": "keyword"
+                        },
+                        "resp_h": {
+                            "type": "ip"
+                        },
+                        "resp_p": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "trans_depth": {
+                    "type": "long"
+                },
+                "method": {
+                    "type": "keyword"
+                },
+                "host": {
+                    "type": "keyword"
+                },
+                "uri": {
+                    "type": "keyword"
+                },
+                "referrer": {
+                    "type": "keyword"
+                },
+                "version": {
+                    "type": "keyword"
+                },
+                "user_agent": {
+                    "type": "keyword"
+                },
+                "request_body_len": {
+                    "type": "long"
+                },
+                "response_body_len": {
+                    "type": "long"
+                },
+                "status_code": {
+                    "type": "long"
+                },
+                "status_msg": {
+                    "type": "keyword"
+                },
+                "info_code": {
+                    "type": "long"
+                },
+                "info_msg": {
+                    "type": "keyword"
+                },
+                "tags": {
+                    "type": "keyword"
+                },
+                "username": {
+                    "type": "keyword"
+                },
+                "password": {
+                    "type": "keyword"
+                },
+                "proxied": {
+                    "type": "keyword"
+                },
+                "orig_fuids": {
+                    "type": "keyword"
+                },
+                "orig_filenames": {
+                    "type": "keyword"
+                },
+                "orig_mime_types": {
+                    "type": "keyword"
+                },
+                "resp_fuids": {
+                    "type": "keyword"
+                },
+                "resp_filenames": {
+                    "type": "keyword"
+                },
+                "resp_mime_types": {
+                    "type": "keyword"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "loaded_scripts": {
+            "properties": {
+                "name": {
+                    "type": "keyword"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "notice": {
+            "properties": {
+                "uid": {
+                    "type": "keyword"
+                },
+                "id": {
+                    "properties": {
+                        "orig_h": {
+                            "type": "ip"
+                        },
+                        "orig_p": {
+                            "type": "keyword"
+                        },
+                        "resp_h": {
+                            "type": "ip"
+                        },
+                        "resp_p": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "fuid": {
+                    "type": "keyword"
+                },
+                "file_mime_type": {
+                    "type": "keyword"
+                },
+                "file_desc": {
+                    "type": "keyword"
+                },
+                "proto": {
+                    "type": "keyword"
+                },
+                "note": {
+                    "type": "keyword"
+                },
+                "msg": {
+                    "type": "keyword"
+                },
+                "sub": {
+                    "type": "keyword"
+                },
+                "src": {
+                    "type": "ip"
+                },
+                "dst": {
+                    "type": "ip"
+                },
+                "p": {
+                    "type": "keyword"
+                },
+                "n": {
+                    "type": "long"
+                },
+                "peer_descr": {
+                    "type": "keyword"
+                },
+                "actions": {
+                    "type": "keyword"
+                },
+                "suppress_for": {
+                    "type": "double"
+                },
+                "dropped": {
+                    "type": "boolean"
+                },
+                "remote_location": {
+                    "properties": {
+                        "country_code": {
+                            "type": "keyword"
+                        },
+                        "region": {
+                            "type": "keyword"
+                        },
+                        "city": {
+                            "type": "keyword"
+                        },
+                        "latitude": {
+                            "type": "double"
+                        },
+                        "longitude": {
+                            "type": "double"
+                        }
+                    }
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "packet_filter": {
+            "properties": {
+                "node": {
+                    "type": "keyword"
+                },
+                "filter": {
+                    "type": "keyword"
+                },
+                "init": {
+                    "type": "boolean"
+                },
+                "success": {
+                    "type": "boolean"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "reporter": {
+            "properties": {
+                "level": {
+                    "type": "keyword"
+                },
+                "message": {
+                    "type": "keyword"
+                },
+                "location": {
+                    "type": "keyword"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "ssl": {
+            "properties": {
+                "uid": {
+                    "type": "keyword"
+                },
+                "id": {
+                    "properties": {
+                        "orig_h": {
+                            "type": "ip"
+                        },
+                        "orig_p": {
+                            "type": "keyword"
+                        },
+                        "resp_h": {
+                            "type": "ip"
+                        },
+                        "resp_p": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "version": {
+                    "type": "keyword"
+                },
+                "cipher": {
+                    "type": "keyword"
+                },
+                "curve": {
+                    "type": "keyword"
+                },
+                "server_name": {
+                    "type": "keyword"
+                },
+                "resumed": {
+                    "type": "boolean"
+                },
+                "last_alert": {
+                    "type": "keyword"
+                },
+                "next_protocol": {
+                    "type": "keyword"
+                },
+                "established": {
+                    "type": "boolean"
+                },
+                "cert_chain_fuids": {
+                    "type": "keyword"
+                },
+                "client_cert_chain_fuids": {
+                    "type": "keyword"
+                },
+                "subject": {
+                    "type": "keyword"
+                },
+                "issuer": {
+                    "type": "keyword"
+                },
+                "client_subject": {
+                    "type": "keyword"
+                },
+                "client_issuer": {
+                    "type": "keyword"
+                },
+                "validation_status": {
+                    "type": "keyword"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "stats": {
+            "properties": {
+                "peer": {
+                    "type": "keyword"
+                },
+                "mem": {
+                    "type": "long"
+                },
+                "pkts_proc": {
+                    "type": "long"
+                },
+                "bytes_recv": {
+                    "type": "long"
+                },
+                "pkts_dropped": {
+                    "type": "long"
+                },
+                "pkts_link": {
+                    "type": "long"
+                },
+                "pkt_lag": {
+                    "type": "double"
+                },
+                "events_proc": {
+                    "type": "long"
+                },
+                "events_queued": {
+                    "type": "long"
+                },
+                "active_tcp_conns": {
+                    "type": "long"
+                },
+                "active_udp_conns": {
+                    "type": "long"
+                },
+                "active_icmp_conns": {
+                    "type": "long"
+                },
+                "tcp_conns": {
+                    "type": "long"
+                },
+                "udp_conns": {
+                    "type": "long"
+                },
+                "icmp_conns": {
+                    "type": "long"
+                },
+                "timers": {
+                    "type": "long"
+                },
+                "active_timers": {
+                    "type": "long"
+                },
+                "files": {
+                    "type": "long"
+                },
+                "active_files": {
+                    "type": "long"
+                },
+                "dns_requests": {
+                    "type": "long"
+                },
+                "active_dns_requests": {
+                    "type": "long"
+                },
+                "reassem_tcp_size": {
+                    "type": "long"
+                },
+                "reassem_file_size": {
+                    "type": "long"
+                },
+                "reassem_frag_size": {
+                    "type": "long"
+                },
+                "reassem_unknown_size": {
+                    "type": "long"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        },
+        "weird": {
+            "properties": {
+                "uid": {
+                    "type": "keyword"
+                },
+                "id": {
+                    "properties": {
+                        "orig_h": {
+                            "type": "ip"
+                        },
+                        "orig_p": {
+                            "type": "keyword"
+                        },
+                        "resp_h": {
+                            "type": "ip"
+                        },
+                        "resp_p": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "name": {
+                    "type": "keyword"
+                },
+                "addl": {
+                    "type": "keyword"
+                },
+                "notice": {
+                    "type": "boolean"
+                },
+                "peer": {
+                    "type": "keyword"
+                },
+                "ts": {
+                    "type": "date"
+                }
+            },
+            "_all": {
+                "enabled": false
+            }
+        }
+    }
+}
