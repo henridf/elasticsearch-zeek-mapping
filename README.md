@@ -1,1 +1,1 @@
-# Elasticsearch template for Bro logs
+# Elasticsearch template for Zeek logs
